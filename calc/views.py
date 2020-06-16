@@ -1,4 +1,5 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+from . import models
 import math
 
 
@@ -9,3 +10,8 @@ class IndexView(TemplateView):
 
     def get_context_data(self):
         return {'PI': math.PI}
+
+
+class HistoryView(ListView):
+    template_name = 'app/history.html'
+    model = models.Expr

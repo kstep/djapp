@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+    {% load calc %}
+    <h1>History</h1>
+    <ol>
+    {% for expr in object_list %}
+        <li>{{ expr.expression }} = {% calc %}{{ expr.expression }}{% endcalc %}</li>
+    {% endfor %}
+    </ol>
+</body>
+</html>
